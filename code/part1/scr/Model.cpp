@@ -7,6 +7,12 @@ Model::Model() {
     bias2 = Matrix(1, 10);
 }
 
+Model::Model(Matrix& input_first, Matrix& input_second, Matrix& input_third, Matrix& input_fourth) {
+    weight1 = input_first;
+    bias1 = input_second;
+    weight2 = input_third;
+    bias2 = input_fourth;
+}
 
 std::vector<float> Model::forward(Matrix& input) {
     Matrix temp = (input * weight1);

@@ -1,4 +1,5 @@
 #include "../include/Matrix.h"
+#include <cmath>
 Matrix::Matrix(int rows, int cols) {
     this->rows = rows;
     this->cols = cols;
@@ -74,11 +75,11 @@ std::vector<float> softMax(const std::vector<float>& vec) {
     float sum = 0.0f;
 
     for (float val : vec) {
-        sum += std::exp(val);
+        sum += exp(val);
     }
 
     for (size_t i = 0; i < vec.size(); ++i) {
-        result[i] = std::exp(vec[i]) / sum;
+        result[i] = exp(vec[i]) / sum;
     }
     return result;
 }
