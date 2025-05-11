@@ -1,19 +1,31 @@
 #ifndef _TCP_SOCKET_H_
 #define _TCP_SOCKET_H_
 
-#include <WinSock2.h>//windows平台的网络库头文件
-// #pragma comment(lib, "ws2_32.lib")//库文件
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <cstring>
+#include <cerrno>
+#include <iostream>
 
 #define PORT 8888
-#define err(errMsg) printf("[line: %d ] %s failed code %d", __LINE__, errMsg, WSAGetLastError())//__LINE__可以输出行数
 
-//打开网络库
+// 打印错误信息
+#define err(errMsg) do { \
+    std::cerr << "[line: " << __LINE__ << "] " << errMsg << " failed: " << errno << " (" << strerror(errno) << ")" << std::endl; \
+} while(0)
+
+// 初始化 socket
 bool InitSocket();
-//关闭网络库
-bool CloseSocket();
-//创建服务器socket
-SOCKET CreatServerSocket();
 
-SOCKET CreatClientSocket(const char* IP);
+// 关闭 socket
+bool CloseSocket();
+
+// 创建服务器 socket
+int CreatServerSocket();
+
+// 创建客户端 socket
+int CreatClientSocket(const char* IP);
 
 #endif
