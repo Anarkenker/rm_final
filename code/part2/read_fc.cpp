@@ -1,4 +1,4 @@
-#include "../part1/include/model.h"
+#include "../part1/include/Model.h"
 #include "../part1/include/Matrix.h"
 #include <iostream>
 #include <vector>
@@ -27,7 +27,11 @@ Matrix read_fc(const std::string& file_name, int rows, int cols) {
 }
 
 int main() {
-    std::ifstream read_file_meta("../mnist-fc/meta.json");
+    // 由于一些神秘的问题， 我们先需要找到该文件的文件路径， 再去打开meta.json文件
+    std::filesystem::path current_path = std::filesystem::current_path();
+    std::cout << "当前工作路径: " << current_path.string() << std::endl;
+
+    std::ifstream read_file_meta("mnist-fc/meta.json");
     if (!read_file_meta.is_open()) {
         std::cerr << "无法打开 meta.json 文件！" << std::endl;
         return 1;
@@ -40,10 +44,10 @@ int main() {
     auto weight2_shape = meta["fc2.weight"];
     auto bias2_shape = meta["fc2.bias"];
 
-    Matrix weight1 = read_fc("../mnist-fc/fc1.weight", weight1_shape[0], weight1_shape[1]);
-    Matrix bias1   = read_fc("../mnist-fc/fc1.bias",   bias1_shape[0],  bias1_shape[1]);
-    Matrix weight2 = read_fc("../mnist-fc/fc2.weight", weight2_shape[0], weight2_shape[1]);
-    Matrix bias2   = read_fc("../mnist-fc/fc2.bias",   bias2_shape[0],  bias2_shape[1]);
+    Matrix weight1 = read_fc("mnist-fc/fc1.weight", weight1_shape[0], weight1_shape[1]);
+    Matrix bias1   = read_fc("mnist-fc/fc1.bias",   bias1_shape[0],  bias1_shape[1]);
+    Matrix weight2 = read_fc("mnist-fc/fc2.weight", weight2_shape[0], weight2_shape[1]);
+    Matrix bias2   = read_fc("mnist-fc/fc2.bias",   bias2_shape[0],  bias2_shape[1]);
 
     Model model(weight1, bias1, weight2, bias2);
 
