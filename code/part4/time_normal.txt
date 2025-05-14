@@ -1,0 +1,21 @@
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+耗时：40.5427ms
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+耗时：42.6259ms
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+耗时：40.328ms
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+耗时：41.4746ms
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+\耗时：41.9341ms
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+耗时：40.8232ms
+macbookpro@MacBookdeMacBook-Air build % ./main
+当前工作路径: /Users/macbookpro/Documents/code/GKD-Software-2025-Test/build
+耗时：39.975ms
