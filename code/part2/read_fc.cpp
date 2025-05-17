@@ -9,6 +9,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <nlohmann/json.hpp>
+#include <fstream>
 #include <filesystem>
 
 using json = nlohmann::json;

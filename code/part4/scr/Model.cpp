@@ -18,7 +18,9 @@ std::vector<float> Model::forward(Matrix& input) {
     auto start = std::chrono::high_resolution_clock::now();
 
     Matrix temp = (input * weight1);
-    for(int i = 0; i < 500; i++) {
+    auto& temp_data = temp.getData();
+    auto& bias1_data = bias1.getData();
+    for (int i = 0; i < 500; i++) {
         temp.getData()[0][i] = temp.getData()[0][i] + bias1.getData()[0][i];
     }
     temp = temp.relu(temp);

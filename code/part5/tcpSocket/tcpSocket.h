@@ -11,21 +11,16 @@
 
 #define PORT 8888
 
-// 打印错误信息
 #define err(errMsg) do { \
     std::cerr << "[line: " << __LINE__ << "] " << errMsg << " failed: " << errno << " (" << strerror(errno) << ")" << std::endl; \
 } while(0)
 
-// 初始化 socket
 bool InitSocket();
 
-// 关闭 socket
-bool CloseSocket();
+bool CloseSocket(int socket_fd);
 
-// 创建服务器 socket
 int CreatServerSocket();
 
-// 创建客户端 socket
 int CreatClientSocket(const char* IP);
 
 #endif

@@ -4,8 +4,8 @@ bool InitSocket() {
     return true;
 }
 
-bool CloseSocket() {
-    return true;
+bool CloseSocket(int socket_fd) {
+    return close(socket_fd) == 0;
 }
 
 int CreatServerSocket() {

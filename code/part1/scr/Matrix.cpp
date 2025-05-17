@@ -1,5 +1,7 @@
 #include "../include/Matrix.h"
 #include <cmath>
+#include <algorithm>
+
 Matrix::Matrix(int rows, int cols) {
     this->rows = rows;
     this->cols = cols;
@@ -71,16 +73,19 @@ Matrix Matrix::relu(const Matrix& other_matrix) {
 }
 
 std::vector<float> softMax(const std::vector<float>& vec) {
-    std::vector<float> result(vec.size());
+    float max_val = *std::max_element(vec.begin(), vec.end());
     float sum = 0.0f;
 
-    for (float val : vec) {
-        sum += exp(val);
+    std::vector<float> result(vec.size());
+    for (size_t i = 0; i < vec.size(); ++i) {
+        result[i] = exp(vec[i] - max_val);
+        sum += result[i];
     }
 
     for (size_t i = 0; i < vec.size(); ++i) {
-        result[i] = exp(vec[i]) / sum;
+        result[i] /= sum;
     }
+
     return result;
 }
 
