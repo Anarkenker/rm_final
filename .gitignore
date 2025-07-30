@@ -4,11 +4,4 @@
 # 忽略 __pycache__ 目录
 __pycache__/
 build/
-# 忽略所有 .tmp 文件
-
-# 忽略特定文件
-secrets.txt
-
-# 忽略所有 .o 和 .a 文件，但不忽略 lib.a
-*.[oa]
-!lib.a
+.vscode/
