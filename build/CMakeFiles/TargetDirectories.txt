@@ -1,5 +1,0 @@
-/Users/macbookpro/Documents/code/rm_final/build/CMakeFiles/Part6.dir
-/Users/macbookpro/Documents/code/rm_final/build/CMakeFiles/Server.dir
-/Users/macbookpro/Documents/code/rm_final/build/CMakeFiles/Part6_normal.dir
-/Users/macbookpro/Documents/code/rm_final/build/CMakeFiles/edit_cache.dir
-/Users/macbookpro/Documents/code/rm_final/build/CMakeFiles/rebuild_cache.dir
